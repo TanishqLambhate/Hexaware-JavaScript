@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="Heading">Welcome Tanishq</h1>
+    <script>
+        var
+            student = {
+                name: "Tonika R",
+                batch: 3
+            }
+        console.log(student)
+        var name = "iuoi"
+        name = "ijo"
+        console.log(name)
+            //   Task
+        function movieUrl(domain, genre, year) {
+            return "http://" + domain + "?genere=" + genre + "&year=" + year;
+        }
+
+        console.log(movieUrl("imdb.com", "thriller", 2020));
+
+        function movieUrl(domain, genre, year) {
+            return `http://${domain}?genere=${genre}&year=${year}`;
+        }
+
+        console.log(movieUrl("imdb.com", "thriller", 2020));
+        //undefined is value and not defined is error
+        var x
+        console.log(typeof(x))
+        let t1 = [80, 90];
+        let t2 = [50, 60];
+        let t3 = [...t1, ...t2];
+        console.log(t3);
+        //   [80, 90, 50, 60]
+
+        //   Math operation
+        console.log(Math.max(6, 7, 4)); // Accepts n no. of argument
+
+        let heights = [120, 140, 190, 80, 170]; // object
+        //   console.log(
+        //     Math.max(heights[0], heights[1], heights[2], heights[3], heights[4])
+        //   );
+        console.log(Math.max(heights)); // NaN
+        console.log(Math.max(...heights)); // 190
+
+        //   ... rest
+        function own_max(...nums) {
+            // code
+            return nums;
+        }
+        console.log(own_max(5, 6, 10));
+        console.log(own_max(5, 6, 10, 7, 80, 60));
+        console.log("Hi from loops");
+        const marks = [40, 50, 60, 70, 40];
+
+        console.log("Normal for loop");
+        for (let i = 0; i < marks.length; i++) {
+            console.log(marks[i]);
+        }
+
+        console.log("for...in");
+        for (let idx in marks) {
+            console.log(marks[idx]);
+        }
+
+        console.log("for...of"); // for...in (python)
+        for (let mark of marks) {
+            console.log(mark);
+        }
+
+        // for...in
+        // const avenger = {
+        //   name: "Tony Stark",
+        //   house: "🏘️",
+        //   networth: "💰💰💰",
+        //   power: "🤖",
+        //   phrase: "❤️ you 3000",
+        // };
+
+        // for (let key in avenger) {
+        //   console.log(key, avenger[key]);
+        // }
+
+        // console.log(Object.keys(avenger));
+        // console.log(Object.values(avenger));
+
+        const avenger = {
+            name: "Tony Stark",
+            house: "🏘️",
+            networth: "💰💰💰",
+            power: "🤖",
+            phrase: "❤️ you 3000",
+        };
+
+        const details = {
+            age: 40,
+            power: "💿",
+        };
+
+        // Merging objects
+        console.log({...avenger,
+            ...details
+        }); // ** - unpacking operator
+        console.log({...details,
+            ...avenger
+        }); // only unique keys
+        var h2 = document.getElementById("Heading");
+        h2.innerText;
+        console.log(h2.innerText)
+    </script>
+</body>
+
+</html>
+<!-- ! +<tab> -->

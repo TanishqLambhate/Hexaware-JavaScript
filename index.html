@@ -2,120 +2,86 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Self closing tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+        h1 {
+            color: crimson;
+        }
+        
+        .title {
+            color: orange;
+        }
+    </style>
 </head>
 
 <body>
-    <h1 id="Heading">Welcome Tanishq</h1>
+    <h1>Welcome to the app</h1>
+    <h2 id="sub-heading">Welcome to the app</h2>
+    <h3 class="title">Welcome to the app 1</h3>
+    <h4 class="title">Welcome to the app 2</h4>
+    <h5 class="title">Welcome to the app 3</h5>
+    <h6>Welcome to the app</h6>
+
+    <!-- Event listeners: Interactive | onclick - listens for click -->
+    <button onclick="clicked()" id="Count">Click</button>
+    <br />
+    <br />
+
+    <h3>Check for driving test</h3>
+    <input type="text" id="age" placeholder="Enter your age" />
+    <button onclick="driving_test()" id="age_button">Check</button>
+    <p id="output"></p>
+    <!-- src - source | linked -->
+    <!-- <script src="fundamentals.js "></script> -->
+    <!-- <script src="basic-loops.js "></script> -->
     <script>
-        var
-            student = {
-                name: "Tonika R",
-                batch: 3
-            }
-        console.log(student)
-        var name = "iuoi"
-        name = "ijo"
-        console.log(name)
-            //   Task
-        function movieUrl(domain, genre, year) {
-            return "http://" + domain + "?genere=" + genre + "&year=" + year;
+        var h2 = document.getElementById("sub-heading");
+        console.log(h2.innerText);
+        h2.innerText = "This is super cool "; // update your html
+
+        var titles = document.getElementsByClassName("title ");
+        console.log(titles);
+
+        for (title of titles) {
+            console.log(title.innerText);
         }
 
-        console.log(movieUrl("imdb.com", "thriller", 2020));
+        // Task -  Print the how many times they have clicked on the screen
+        var count_times = document.getElementById("Count")
+        count = 0
 
-        function movieUrl(domain, genre, year) {
-            return `http://${domain}?genere=${genre}&year=${year}`;
+        function
+        clicked() {
+            count += 1;
+            h6.innerText = `You clicked ${count} the button`;
+            // console.log(count_times)
+            return
         }
 
-        console.log(movieUrl("imdb.com", "thriller", 2020));
-        //undefined is value and not defined is error
-        var x
-        console.log(typeof(x))
-        let t1 = [80, 90];
-        let t2 = [50, 60];
-        let t3 = [...t1, ...t2];
-        console.log(t3);
-        //   [80, 90, 50, 60]
 
-        //   Math operation
-        console.log(Math.max(6, 7, 4)); // Accepts n no. of argument
 
-        let heights = [120, 140, 190, 80, 170]; // object
-        //   console.log(
-        //     Math.max(heights[0], heights[1], heights[2], heights[3], heights[4])
-        //   );
-        console.log(Math.max(heights)); // NaN
-        console.log(Math.max(...heights)); // 190
-
-        //   ... rest
-        function own_max(...nums) {
-            // code
-            return nums;
+        function driving_test() {
+            var age_input = document.getElementById("age");
+            var output = document.getElementById("output");
+            var age = age_input.value
+            console.log(age)
+            age > 18 ? output.innerText = `Eligible` : output.innerText = `Not Eligible`
+                // if (age > 18) {
+                //     console.log("Eligible ")
+                //     output.innerText = `Eligible`
+                //     return "Eligible "
+                // } else {
+                //     return "Not Eligible "
+                // }
         }
-        console.log(own_max(5, 6, 10));
-        console.log(own_max(5, 6, 10, 7, 80, 60));
-        console.log("Hi from loops");
-        const marks = [40, 50, 60, 70, 40];
-
-        console.log("Normal for loop");
-        for (let i = 0; i < marks.length; i++) {
-            console.log(marks[i]);
-        }
-
-        console.log("for...in");
-        for (let idx in marks) {
-            console.log(marks[idx]);
-        }
-
-        console.log("for...of"); // for...in (python)
-        for (let mark of marks) {
-            console.log(mark);
-        }
-
-        // for...in
-        // const avenger = {
-        //   name: "Tony Stark",
-        //   house: "🏘️",
-        //   networth: "💰💰💰",
-        //   power: "🤖",
-        //   phrase: "❤️ you 3000",
-        // };
-
-        // for (let key in avenger) {
-        //   console.log(key, avenger[key]);
-        // }
-
-        // console.log(Object.keys(avenger));
-        // console.log(Object.values(avenger));
-
-        const avenger = {
-            name: "Tony Stark",
-            house: "🏘️",
-            networth: "💰💰💰",
-            power: "🤖",
-            phrase: "❤️ you 3000",
-        };
-
-        const details = {
-            age: 40,
-            power: "💿",
-        };
-
-        // Merging objects
-        console.log({...avenger,
-            ...details
-        }); // ** - unpacking operator
-        console.log({...details,
-            ...avenger
-        }); // only unique keys
-        var h2 = document.getElementById("Heading");
-        h2.innerText;
-        console.log(h2.innerText)
+        //Type input ->.value instead of innerText
     </script>
 </body>
 
 </html>
-<!-- ! +<tab> -->
+
+<!-- To create boilerplate code -->
+<!-- !<tab> -->
