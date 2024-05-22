@@ -1,0 +1,68 @@
+<html>
+
+<body>
+    <h2>JavaScript Class Inheritance</h2>
+    <p id="demo"></p>
+    <script>
+        class Mall {
+            constructor(shopName) {
+                this.shopName = shopName;
+            }
+            shopIsPresent() {
+                return this.shopName + " is present in the ";
+            }
+        }
+
+        //   Shop(Mall)
+        class Shop extends Mall {
+            constructor(name, mallName) {
+                super(name); // Base class constructor
+                this.mallName = mallName;
+            }
+            showShop() {
+                return this.shopIsPresent() + this.mallName;
+            }
+        }
+        let newMall = new Shop("Domino", "Select City Walk Mall");
+        document.getElementById("demo").innerHTML = newMall.showShop();
+
+        class Animal {
+            constructor(name) {
+                this.name = name;
+            }
+            speak() {
+                return "Some sound";
+            }
+        }
+
+        class Dog extends Animal {
+            constructor(name, speed) {
+                super(name); // Base class constructor
+                this.speed = speed;
+            }
+
+            run() {
+                return "🐶 wags tail!!";
+            }
+
+            // Method overriding
+            speak() {
+                return "Woof!! 🐕";
+            }
+
+            speed_bonus() {
+                return `${this.name} is running at ${this.speed * 2}Km/hr`;
+            }
+        }
+
+        toby = new Animal("toby");
+        console.log(toby.speak());
+
+        maxy = new Dog("maxy", 20);
+        console.log(maxy.run());
+        console.log(maxy.speak());
+        console.log(maxy.speed_bonus());
+    </script>
+</body>
+
+</html>

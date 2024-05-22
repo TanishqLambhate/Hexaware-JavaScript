@@ -68,14 +68,14 @@
             var output = document.getElementById("output");
             var age = age_input.value
             console.log(age)
-
-            if (age > 18) {
-                console.log("Eligible ")
-                output.innerText = `Eligible`
-                return "Eligible "
-            } else {
-                return "Not Eligible "
-            }
+            age > 18 ? output.innerText = `Eligible` : output.innerText = `Not Eligible`
+                // if (age > 18) {
+                //     console.log("Eligible ")
+                //     output.innerText = `Eligible`
+                //     return "Eligible "
+                // } else {
+                //     return "Not Eligible "
+                // }
         }
         //Type input ->.value instead of innerText
     </script>
